@@ -13,6 +13,9 @@ from core.dialog.model.DialogSession import DialogSession
 # todo: how to configure kdeconnectd? needs to be paired, maybe widget?
 ## pairing can be done via kdeconnect-cli, but not sure if it needs user input
 
+# /usr/lib/libexec/kdeconnectd -platform offscreen
+# https://github.com/KDE/kdeconnect-kde/blob/master/cli/kdeconnect-cli.cpp lists the dbus interface and how to use it
+
 class Kdeconnect(Module):
 	"""
 	Author: glueckself
