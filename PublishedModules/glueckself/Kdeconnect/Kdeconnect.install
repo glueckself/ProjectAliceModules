@@ -1,0 +1,18 @@
+{
+	"name": "Kdeconnect",
+	"version": 0.1,
+	"author": "Glueckself",
+	"maintainers": [],
+	"desc": "Connect an android device via kde connect to receive notifications and find the phone.",
+	"aliceMinVersion": 0.10,
+	"pipRequirements": [],
+	"systemRequirements": [
+		"kdeconnect"
+	],
+	"conditions": {
+		"lang": [
+			"en",
+			"de"
+		]
+	}
+}

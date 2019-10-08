@@ -1,0 +1,39 @@
+{
+    "module": "Kdeconnect",
+    "icon": "time",
+    "description": "Connect an android device via kde connect to receive notifications and find the phone.",
+    "slotTypes": [
+        {
+            "name": "DummySlot",
+            "matchingStrictness": null,
+            "automaticallyExtensible": false,
+            "useSynonyms": true,
+            "values": [
+                {
+                    "value": "foo",
+                    "synonyms": ["bar"]
+                }
+            ]
+        }
+    ],
+    "intents": [
+        {
+            "name": "Dummy",
+            "description": "REMOVE this dummy intent!",
+            "enabledByDefault": true,
+            "utterances": [
+                "dummy {foo:=>DummySlotName}",
+                "bar"
+            ],
+            "slots": [
+                {
+                    "name": "DummySlotName",
+                    "description": "dummy",
+                    "required": false,
+                    "type": "DummySlot",
+                    "missingQuestion": ""
+                }
+            ]
+        }
+    ]
+}
