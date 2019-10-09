@@ -1,0 +1,24 @@
+[11:07:30] [Tts] was asked to say "Ok sergio, I have added you! If you want me to recognize you based on your voice you need to create a personal wakeword. It is not obligatory but recommended. Do you want to do that?"
+[11:07:49] [Asr] captured text "this please" in 1.0s
+[11:07:51] [Nlu] intent not recognized for "this please"
+[11:07:51] [Dialogue] was ask to end session with id 9305c880-fcfc-4965-acf7-f9ece7370445
+[11:07:51] [Dialogue] session with id '9305c880-fcfc-4965-acf7-f9ece7370445' was ended on site abakus. The session ended as expected
+[11:07:51] [Dialogue] was asked to start a session on site abakus
+[11:07:51] [Dialogue] session with id 'a31ded37-bb71-46f0-90f8-346d1bbc4b99' was started on site abakus
+[11:07:51] [Tts] was asked to say "Sorry?"
+[11:07:55] [Asr] captured text "please" in 1.0s
+[11:07:57] [Nlu] detected intent alicebot-mlan:AnswerYesOrNo with confidence score 0.010 for input "please"
+[11:07:57] [Dialogue] New intent detected alicebot-mlan:AnswerYesOrNo with confidence 0.010
+[11:07:57] [Dialogue] was ask to continue session with id a31ded37-bb71-46f0-90f8-346d1bbc4b99 by saying 'Sorry?'
+[11:07:57] [Tts] was asked to say "Sorry?"
+[11:08:01] [Asr] captured text "yes please" in 2.0s
+[11:08:02] [Nlu] detected intent alicebot-mlan:RebootSystem with confidence score 0.035 for input "yes please"
+[11:08:02] [Dialogue] New intent detected alicebot-mlan:RebootSystem with confidence 0.035
+[11:08:02] [Dialogue] was ask to continue session with id a31ded37-bb71-46f0-90f8-346d1bbc4b99 by saying 'Sorry?'
+[11:08:02] [Tts] was asked to say "Sorry?"
+[11:08:09] [Asr] captured text "yes" in 5.0s
+[11:08:10] [Nlu] detected intent alicebot-mlan:GlobalStop with confidence score 0.064 for input "yes"
+[11:08:10] [Dialogue] New intent detected alicebot-mlan:GlobalStop with confidence 0.064
+[11:08:10] [Dialogue] was ask to end session with id a31ded37-bb71-46f0-90f8-346d1bbc4b99 by saying 'Ok, stop, I just don't understand'
+[11:08:10] [Tts] was asked to say "Ok, stop, I just don't understand"
+[11:08:14] [Dialogue] session with id 'a31ded37-bb71-46f0-90f8-346d1bbc4b99' was ended on site abakus. The session ended as expected
