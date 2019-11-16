@@ -1,0 +1,8 @@
+{
+	"host": "",
+	"path": "/public.php/webdav/",
+	"port": 443,
+	"protocol": "https",
+	"username": "",
+	"password": "",
+}
