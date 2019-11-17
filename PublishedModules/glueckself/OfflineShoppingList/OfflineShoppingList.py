@@ -2,7 +2,6 @@ from typing import Tuple, Callable
 
 from core.base.model.Intent import Intent
 from core.base.model.Module import Module
-from core.commons import commons
 from core.dialog.model.DialogSession import DialogSession
 
 import easywebdav
@@ -79,7 +78,7 @@ class OfflineShoppingList(Module):
 
 	def _writeToDav(self):
 		outFile = io.StringIO('\n'.join(self._shoppinglist))
-		self._webdav.upload(outFile, f'List-{date.today())}.txt')
+		self._webdav.upload(outFile, f'List-{date.today()}.txt')
 
 	def _deleteCompleteList(self) -> str:
 		"""
