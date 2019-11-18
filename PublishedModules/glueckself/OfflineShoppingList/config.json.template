@@ -1,0 +1,32 @@
+{
+	"host": {
+		"defaultValue": "localhost",
+		"dataType": "string",
+		"description": "WebDAV host to connect to"
+	},
+	"port": {
+		"defaultValue": 443,
+		"dataType": "integer",
+		"description": "Port number to connect to"
+	},
+	"protocol": {
+		"defaultValue": "https",
+		"dataType": "string",
+		"description": "Protocol to use (http or https)"
+	},
+	"path": {
+		"defaultValue": "/public.php/webdav/",
+		"dataType": "string",
+		"description": "Path to the WebDAV directory"
+	},
+	"username": {
+		"defaultValue": "",
+		"dataType": "string",
+		"description": "Username for login"
+	},
+	"password": {
+		"defaultValue": "",
+		"dataType": "string",
+		"description": "Password for login"
+	}
+}
