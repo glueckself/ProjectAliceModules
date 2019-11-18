@@ -4,9 +4,9 @@ from core.base.model.Intent import Intent
 from core.base.model.Module import Module
 from core.dialog.model.DialogSession import DialogSession
 
-import easywebdav
+import easywebdav2 as easywebdav
 from datetime import date
-
+import io
 
 class OfflineShoppingList(Module):
 	"""
@@ -55,20 +55,21 @@ class OfflineShoppingList(Module):
 			'confDelList': self.confDelIntent
 		}
 		
-		webdav = easywebdav.connect(host=self.getConfig('host'), path=self.getConfig('path'), port=self.getConfig('port'),
+		self._webdav = easywebdav.connect(host=self.getConfig('host'), path=self.getConfig('path'), port=self.getConfig('port'), verify_ssl=False,
 			username=self.getConfig('username'), password=self.getConfig('password'), protocol=self.getConfig('protocol'))
+		self._webdav.ls()
 		self._shoppinglist = list()
 
 	def _writeToDav(self):
 		outFile = io.StringIO('\n'.join(self._shoppinglist))
 		self._webdav.upload(outFile, f'List-{date.today()}.txt')
+		self.logInfo("Uploaded list")
 
 	def _deleteCompleteList(self) -> str:
 		"""
 		perform the deletion of the complete list
 		-> load all and delete item by item
 		"""
-		self._writeToDav()
 		self._shoppinglist = list()
 		return self.randomTalk('del_all')
 
@@ -81,7 +82,7 @@ class OfflineShoppingList(Module):
 		added = list()
 		exist = list()
 		for item in items:
-			if not any(entr['name'].lower() == item.lower() for entr in self._shoppinglist):
+			if not any(entr.lower() == item.lower() for entr in self._shoppinglist):
 				self._shoppinglist.append(item)
 				added.append(item)
 			else:
@@ -113,7 +114,7 @@ class OfflineShoppingList(Module):
 		found = list()
 		missing = list()
 		for item in items:
-			if any(entr['name'].lower() == item.lower() for entr in self._shoppinglist):
+			if any(entr.lower() == item.lower() for entr in self._shoppinglist):
 				found.append(item)
 			else:
 				missing.append(item)
@@ -146,7 +147,7 @@ class OfflineShoppingList(Module):
 			currentDialogState='confDelList')
 
 
-	@Online
+	
 	def confDelIntent(self, session: DialogSession, **_kwargs):
 		if self.Commons.isYes(session):
 			self._deleteCompleteList()
@@ -155,7 +156,7 @@ class OfflineShoppingList(Module):
 			self.endDialog(session.sessionId, text=self.randomTalk('nodel_all'))
 
 
-	@Online
+	
 	def addItemIntent(self, intent: str, session: DialogSession):
 		items = self._getShopItems('add', intent, session)
 		if items:
@@ -163,7 +164,7 @@ class OfflineShoppingList(Module):
 			self.endDialog(session.sessionId, text=self._combineLists('add', added, exist))
 
 
-	@Online
+	
 	def delItemIntent(self, intent: str, session: DialogSession):
 		items = self._getShopItems('rem', intent, session)
 		if items:
@@ -171,7 +172,7 @@ class OfflineShoppingList(Module):
 			self.endDialog(session.sessionId, text=self._combineLists('rem', removed, exist))
 
 
-	@Online
+	
 	def checkListIntent(self, intent: str, session: DialogSession):
 		items = self._getShopItems('chk', intent, session)
 		if items:
@@ -179,10 +180,11 @@ class OfflineShoppingList(Module):
 			self.endDialog(session.sessionId, text=self._combineLists('chk', found, missing))
 
 
-	@Online
+	
 	def readListIntent(self, session: DialogSession, **_kwargs):
 		"""read the content of the list"""
-		itemlist = [item['name'] for item in self._shoppinglist]
+		self._writeToDav()
+		itemlist = [item for item in self._shoppinglist]
 		self.endDialog(session.sessionId, text=self._getTextForList('read', itemlist))
 
 
