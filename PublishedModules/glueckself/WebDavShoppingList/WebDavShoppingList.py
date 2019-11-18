@@ -71,6 +71,7 @@ class WebDavShoppingList(Module):
 		-> load all and delete item by item
 		"""
 		self._shoppinglist = list()
+		self._writeToDav()
 		return self.randomTalk('del_all')
 
 
@@ -87,6 +88,7 @@ class WebDavShoppingList(Module):
 				added.append(item)
 			else:
 				exist.append(item)
+		self._writeToDav()
 		return added, exist
 
 
@@ -103,6 +105,7 @@ class WebDavShoppingList(Module):
 				removed.append(item)
 			except ValueError:
 				exist.append(item)
+		self._writeToDav()
 		return removed, exist
 
 
@@ -183,7 +186,6 @@ class WebDavShoppingList(Module):
 	
 	def readListIntent(self, session: DialogSession, **_kwargs):
 		"""read the content of the list"""
-		self._writeToDav()
 		itemlist = [item for item in self._shoppinglist]
 		self.endDialog(session.sessionId, text=self._getTextForList('read', itemlist))
 
