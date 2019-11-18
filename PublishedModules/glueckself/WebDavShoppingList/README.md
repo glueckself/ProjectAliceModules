@@ -4,12 +4,12 @@
 
 ##### > WGET method
 ```bash
-wget http://modules.projectalice.ch/OfflineShoppingList -O ~/ProjectAlice/system/moduleInstallTickets/OfflineShoppingList.install
+wget http://modules.projectalice.ch/WebDavShoppingList -O ~/ProjectAlice/system/moduleInstallTickets/WebDavShoppingList.install
 ```
 
 ##### > Alice CLI method
 ```bash
-alice module:install glueckself/OfflineShoppingList
+alice module:install glueckself/WebDavShoppingList
 ```
 
 ### Description

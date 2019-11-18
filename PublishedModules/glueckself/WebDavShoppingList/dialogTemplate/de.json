@@ -1,5 +1,5 @@
 {
-	"module": "OfflineShoppingList",
+	"module": "WebDavShoppingList",
 	"icon": "store",
 	"description": "Verwalte deine Bring! Einkaufsliste",
 	"slotTypes": [{
@@ -6414,7 +6414,7 @@
 		]
 	}],
 	"intents": [{
-			"name": "addItem_offlineshop",
+			"name": "addItem_webdavshoppinglist",
 			"description": "Füge etwas zu deiner Einkaufsliste hinzu",
 			"enabledByDefault": true,
 			"utterances": [
@@ -6591,7 +6591,7 @@
 			}]
 		},
 		{
-			"name": "whatItem_offlineshop",
+			"name": "whatItem_webdavshoppinglist",
 			"description": "Spezifiziere welcher Gegenstand bearbeitet werden soll",
 			"enabledByDefault": false,
 			"utterances": [
@@ -6607,7 +6607,7 @@
 			}]
 		},
 		{
-			"name": "deleteItem_offlineshop",
+			"name": "deleteItem_webdavshoppinglist",
 			"description": "Lösche etwas von der Einkaufsliste",
 			"enabledByDefault": true,
 			"utterances": [
@@ -6662,7 +6662,7 @@
 			}]
 		},
 		{
-			"name": "readList_offlineshop",
+			"name": "readList_webdavshoppinglist",
 			"description": "Liest die Einkaufsliste vor",
 			"enabledByDefault": true,
 			"utterances": [
@@ -6698,7 +6698,7 @@
 			"slots": []
 		},
 		{
-			"name": "checkList_offlineshop",
+			"name": "checkList_webdavshoppinglist",
 			"description": "Prüfe ob ein Gegenstand auf der Einkaufsliste steht",
 			"enabledByDefault": true,
 			"utterances": [
@@ -6723,7 +6723,7 @@
 			}]
 		},
 		{
-			"name": "deleteList_offlineshop",
+			"name": "deleteList_webdavshoppinglist",
 			"description": "Lösche die Einkaufsliste",
 			"enabledByDefault": true,
 			"utterances": [

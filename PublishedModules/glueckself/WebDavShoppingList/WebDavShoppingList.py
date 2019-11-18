@@ -8,20 +8,20 @@ import easywebdav2 as easywebdav
 from datetime import date
 import io
 
-class OfflineShoppingList(Module):
+class WebDavShoppingList(Module):
 	"""
 	Author: glueckself
-	Description: maintaines a offline shopping list sent by email
+	Description: Collects items on a shopping list and uploads it to webdav. Based on BringShoppingList.
 	"""
 
 	### Intents
-	_INTENT_ADD_ITEM = Intent('addItem_offlineshop')
-	_INTENT_DEL_ITEM = Intent('deleteItem_offlineshop')
-	_INTENT_READ_LIST = Intent('readList_offlineshop')
-	_INTENT_CHECK_LIST = Intent('checkList_offlineshop', isProtected=True)
-	_INTENT_DEL_LIST = Intent('deleteList_offlineshop')
+	_INTENT_ADD_ITEM = Intent('addItem_webdavshoppinglist')
+	_INTENT_DEL_ITEM = Intent('deleteItem_webdavshoppinglist')
+	_INTENT_READ_LIST = Intent('readList_webdavshoppinglist')
+	_INTENT_CHECK_LIST = Intent('checkList_webdavshoppinglist', isProtected=True)
+	_INTENT_DEL_LIST = Intent('deleteList_webdavshoppinglist')
 	_INTENT_CONF_DEL = Intent('AnswerYesOrNo', isProtected=True)
-	_INTENT_ANSWER_SHOP = Intent('whatItem_offlineshop', isProtected=True)
+	_INTENT_ANSWER_SHOP = Intent('whatItem_webdavshoppinglist', isProtected=True)
 	_INTENT_SPELL_WORD = Intent('SpellWord', isProtected=True)
 
 

@@ -1,13 +1,13 @@
 {
-	"name": "OfflineShoppingList",
+	"name": "WebDavShoppingList",
 	"version": "0.0.1",
 	"author": "glueckself",
 	"maintainers": [],
-	"desc": "Offline shopping list",
+	"desc": "WebDAV based shopping list",
 	"aliceMinVersion": "0.12.0",
 	"systemRequirements": [],
 	"pipRequirements": [
-		"easywebdav"
+		"easywebdav2"
 	],
 	"conditions": {
 		"lang": [
