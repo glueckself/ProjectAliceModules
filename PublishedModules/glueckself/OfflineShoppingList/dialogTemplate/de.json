@@ -6585,9 +6585,9 @@
 			"slots": [{
 				"name": "shopItem",
 				"description": null,
-				"required": false,
+				"required": true,
 				"type": "buyable",
-				"missingQuestion": ""
+				"missingQuestion": "Was brauchst du?"
 			}]
 		},
 		{
