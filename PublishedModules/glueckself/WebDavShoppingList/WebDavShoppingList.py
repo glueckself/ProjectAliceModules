@@ -62,7 +62,7 @@ class WebDavShoppingList(Module):
 
 	def _writeToDav(self):
 		outFile = io.StringIO('\n'.join(self._shoppinglist))
-		self._webdav.upload(outFile, f'List-{date.today()}.txt')
+		self._webdav.upload(outFile, f'List.txt')
 		self.logInfo("Uploaded list")
 
 	def _deleteCompleteList(self) -> str:
@@ -73,7 +73,6 @@ class WebDavShoppingList(Module):
 		self._shoppinglist = list()
 		self._writeToDav()
 		return self.randomTalk('del_all')
-
 
 	def _addItemInt(self, items) -> Tuple[list, list]:
 		"""
